@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+</head>
+<body>
+  <style>
+    #mapid { 
+      height: 50vh;
+      width: 50vw;
+      margin: 100px auto;
+
+     }
+
+  </style>
+  <div id="mapid"></div>
+  <script>
+    var mymap = L.map('mapid').setView([40.4167, -3.70325], 5);
+
+    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+    maxZoom: 18,
+    
+}).addTo(mymap);
+
+var diego = L.marker([19.77086, -16.55288]).addTo(mymap);
+var nelly = L.marker([33.44834, 11.38122]).addTo(mymap);
+var reconsider = L.marker([40.38636, 0.64673]).addTo(mymap);
+var colomera = L.marker([40.62649, 0.71215]).addTo(mymap);
+var springfield = L.marker([40.41354, 4.17723]).addTo(mymap);
+var voramar = L.marker([39.94689, 0.88431]).addTo(mymap);
+
+diego.bindPopup("diego").openPopup();
+nelly.bindPopup("nelly").openPopup();
+reconsider.bindPopup("reconsider").openPopup();
+colomera.bindPopup("colomera").openPopup();
+springfield.bindPopup("springfield").openPopup();
+voramar.bindPopup("voramar").openPopup();
+  </script>
+</body>
+</html>
+
